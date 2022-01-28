@@ -13,6 +13,7 @@ def brute_force_search(graph):
     permutations = itertools.permutations(nodes)
     best_cardinality = 0
     best_sequence = []
+    #isprobava svaku mogucu permutaciju cvorova
     for permutation in permutations:
         #print(permutation)
         curr_s, curr_c = solutionValue(permutation,adj)

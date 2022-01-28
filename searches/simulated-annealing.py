@@ -23,8 +23,24 @@ def simulated_annealing(graph,iterations = 500):
             best_seq = current_seq
     return  best_seq,  best_card
 
-graph = createGraph(5, 5)
-simulated_annealing(graph)
+def simulated_annealing_sort(graph, iterations = 600):
+    best = list(graph.nodes)
+    #sortiramo po stepenu cvora,tj njegovom broju grana
+    best.sort(key=lambda x: graph.degree[x])
+
+    best_s, best_c = solutionValue(best, graph.adj)
+    for i in range(1,iterations):
+        current = best
+        a = random.randint(0, len(best) - 1)
+        b = random.randint(0, len(best) - 1)
+        current[a], current[b] = current[b], current[a]
+        current_s, current_c = solutionValue(current,graph.adj)
+        if (current_c > best_c) or (1 / i > random.random()):
+            best = current
+            best_c = current_c
+            best_s = current_s
+    return best_s, best_c
+
 
 def test(search_f, edges=10, nodes=10, draw=True):
     print('Creating graph')
@@ -40,4 +56,5 @@ def test(search_f, edges=10, nodes=10, draw=True):
     if draw:
         drawGraph(graph, result[0])
 
-test(simulated_annealing,5,5)
+test(simulated_annealing,10,10)
+#test(simulated_annealing_sort,10,10)

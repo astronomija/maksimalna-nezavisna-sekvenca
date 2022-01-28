@@ -1,16 +1,23 @@
-# This is a sample Python script.
+import random
+s = [-1] * 5
+print(s)
+start, end = sorted([random.randrange(5) for _ in range(2)])
+print(start,end)
+fixed_pos = list(range(start, end + 1))
+print(fixed_pos)
+import itertools
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+from utilis import createGraph,solutionValue
+G1 = createGraph(5,5)
 
+nodes = list(G1.nodes)
+adj = G1.adj
+nodes.sort()
+permutations = itertools.permutations([1,2,3,4,5])
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+print(' nodes: ' , nodes)
 
+parent1 = solutionValue([1,2,3,4,5],adj)
+parent2 = solutionValue([2,4,5,1,3],adj)
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+print('p1: ' ,parent1,' p2: ',parent2)
