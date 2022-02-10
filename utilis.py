@@ -26,7 +26,8 @@ G = createGraph()
 #predstavljaju maksimalnu nezavisnu sekvencu u crveno ,dok su ostali plave boje
 def drawGraph(graph,result):
     plt.figure(figsize=(8,8))
-    nx.draw(graph,with_labels=True,node_color = [('red' if x in result else 'blue')
+    nx.draw(graph,with_labels=True,
+            node_color = [('red' if x in result else 'blue')
                                                  for x in graph.nodes])
     plt.show()
 

@@ -23,7 +23,6 @@ def test(search_f, edges=10, nodes=10, draw=True):
     if draw:
         drawGraph(graph, result[0])
 
-#test(bf.brute_force_search, edges=10, nodes=10)
 
 def compare(f1,f2,edges=10,nodes=10,iterations=100):
     print('Comparing {} and {}'.format(f1.__name__,f2.__name__))
@@ -48,9 +47,8 @@ def compare(f1,f2,edges=10,nodes=10,iterations=100):
             results['equal'] += 1
     print(results)
 
-#compare(gen.genetic_search, an.simulated_annealing_sort)
 
-def avg_results(functions, edges=10, nodes=10, iterations=10):
+def avg_results(functions, edges=50, nodes=50, iterations=100):
     results = {}
     sums = {}
     for f in functions:
@@ -85,13 +83,12 @@ def avg_results(functions, edges=10, nodes=10, iterations=10):
     plt.title('Average for {} nodes and {} edges in {} iterations\n'.format(nodes, edges, iterations))
     plt.show()
 
-avg_results([an.simulated_annealing, gen.genetic_search])
+
 
 def plot_results(function, edges= 10, nodes= 10, iterations = 100):
     results = []
     # graph = create_graph(edges, nodes)
     for i in range(0,iterations):
-        print(i)
         graph = createGraph(edges, nodes)
         results.append(function(graph)[1])
 
@@ -109,7 +106,8 @@ def plot_results_by_iter(function, edges= 10, nodes= 10, iterations = 100):
     results = []
     graph = createGraph(edges, nodes)
     for i in range(0,iterations):
-        print(i)
+        print(i,"\n\n")
+        #Posmatramo kako se konkretan metod ponasa s povecanjem iteracija i za svaki broj iteracija cuvamo kardinalnost
         results.append(function(graph, iterations = i)[1])
 
     plt.figure(figsize=(12, 6))
@@ -122,3 +120,4 @@ def plot_results_by_iter(function, edges= 10, nodes= 10, iterations = 100):
     plt.title("{} - Results by iterations \n{} nodes / {} edges".format(function.__name__, nodes, edges))
 
     plt.show()
+
