@@ -38,11 +38,9 @@ class GeneticAlgorithm:
             chromosomes = new_gen
 
             self._current_iteration += 1
-            if self._current_iteration % 10 == 0:
-                print("Iteration %d " % self._current_iteration)
-                # print("Best chromosome: ", chromosomes)
 
-        print("Best is ", self._solution)
+
+        #print("Best is ", self._solution)
         return self._best_chromosome.content, self._best_chromosome.fitness
 
     def mutation(self, chromosome):
@@ -160,18 +158,3 @@ def genetic_search(graph, iterations = 10):
     return GeneticAlgorithm(graph, iterations).optimize()
 
 
-def test(search_f, edges=10, nodes=10, draw=True):
-    print('Creating graph')
-    graph = createGraph(edges, nodes)
-
-    print('Testing', search_f.__name__)
-    start = time.time()
-    result = search_f(graph)
-    end = time.time()
-    print('{} with {} nodes and {} edges took {:.3f}s'.format(search_f.__name__, nodes, edges, end - start))
-    print('Final result', result[0], ' card: ', result[1])
-
-    if draw:
-        drawGraph(graph, result[0])
-
-test(genetic_search)

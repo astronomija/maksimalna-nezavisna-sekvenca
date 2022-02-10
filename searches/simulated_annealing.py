@@ -41,20 +41,3 @@ def simulated_annealing_sort(graph, iterations = 600):
             best_s = current_s
     return best_s, best_c
 
-
-def test(search_f, edges=10, nodes=10, draw=True):
-    print('Creating graph')
-    graph = createGraph(edges, nodes)
-
-    print('Testing', search_f.__name__)
-    start = time.time()
-    result = search_f(graph)
-    end = time.time()
-    print('{} with {} nodes and {} edges took {:.3f}s'.format(search_f.__name__, nodes, edges, end - start))
-    print('Final result', result[0], ' card: ', result[1])
-
-    if draw:
-        drawGraph(graph, result[0])
-
-test(simulated_annealing,10,10)
-#test(simulated_annealing_sort,10,10)
