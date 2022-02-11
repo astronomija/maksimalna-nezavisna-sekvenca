@@ -31,5 +31,6 @@ import searches.genetic as gen
 
 #avg_results([an.simulated_annealing,an.simulated_annealing_slow,an.simulated_annealing_sort,gen.genetic_search],nodes=30,edges=50,iterations=100)
 #avg_results([an.simulated_annealing,an.simulated_annealing_slow,an.simulated_annealing_sort,gen.genetic_search],nodes=200,edges=300,iterations=100)
-avg_results([an.simulated_annealing,an.simulated_annealing_slow,an.simulated_annealing_sort,gen.genetic_search],nodes=200,edges=300,iterations=100)
+#avg_results([an.simulated_annealing,an.simulated_annealing_slow,an.simulated_annealing_sort,gen.genetic_search],nodes=200,edges=300,iterations=100)
 
+test(bf.brute_force_search,nodes=6,edges=6)

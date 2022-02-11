@@ -13,6 +13,7 @@ def brute_force_search(graph):
     permutations = itertools.permutations(nodes)
     best_cardinality = 0
     best_sequence = []
+    bestPermutation = []
     #isprobava svaku mogucu permutaciju cvorova
     for permutation in permutations:
         #print(permutation)
@@ -20,5 +21,6 @@ def brute_force_search(graph):
         if curr_c > best_cardinality:
             best_cardinality = curr_c
             best_sequence = curr_s
-
+            bestPermutation = permutation
+    print(bestPermutation)
     return [best_sequence, best_cardinality]
