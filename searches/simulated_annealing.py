@@ -3,7 +3,7 @@ import  math
 import time
 from utilis import solutionValue,createGraph,drawGraph
 
-def simulated_annealing(graph,iterations = 500):
+def simulated_annealing(graph,iterations = 100):
     best = list(graph.nodes)
     adj = graph.adj
     best_seq, best_card = solutionValue(best,adj)
@@ -58,7 +58,7 @@ def simulated_annealing_sort(graph, iterations = 500):
     return best_s, best_c
 
 #varijanta simuliranog kaljenja u kome menjamo random n/2 sekvencu cvorova u permutaciji
-#tj ispitujemo n/2 okolinu
+#tj ispitujemo n/2 okolinu (n je broj cvorova)
 #dobijamo novu permutaciju i izracunavamo vrednost za nju
 def simulated_annealing_variation(graph, iterations = 500):
     #vise random izmena, ali moguce je zameniti n/2 cvorova

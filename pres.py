@@ -2,6 +2,7 @@ from testing import *
 import searches.simulated_annealing as an
 import searches.brute_force as bf
 import searches.genetic as gen
+import utilis as ut
 
 #test(gen.genetic_search,nodes=50,edges=50,draw=False)
 
@@ -31,6 +32,8 @@ import searches.genetic as gen
 
 #avg_results([an.simulated_annealing,an.simulated_annealing_slow,an.simulated_annealing_sort,gen.genetic_search],nodes=30,edges=50,iterations=100)
 #avg_results([an.simulated_annealing,an.simulated_annealing_slow,an.simulated_annealing_sort,gen.genetic_search],nodes=200,edges=300,iterations=100)
-#avg_results([an.simulated_annealing,an.simulated_annealing_slow,an.simulated_annealing_sort,gen.genetic_search],nodes=200,edges=300,iterations=100)
+#avg_results([an.simulated_annealing,an.simulated_annealing_slow,an.simulated_annealing_sort,gen.genetic_search],nodes=50,edges=1000,iterations=100)
 
-test(bf.brute_force_search,nodes=6,edges=6)
+#test(bf.brute_force_search,nodes=9,edges=9)
+#test(gen.genetic_search,nodes=9,edges = 9)
+#test(an.simulated_annealing,nodes = 9,edges =9)
