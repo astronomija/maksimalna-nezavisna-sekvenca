@@ -34,6 +34,7 @@ import utilis as ut
 #avg_results([an.simulated_annealing,an.simulated_annealing_slow,an.simulated_annealing_sort,gen.genetic_search],nodes=200,edges=300,iterations=100)
 #avg_results([an.simulated_annealing,an.simulated_annealing_slow,an.simulated_annealing_sort,gen.genetic_search],nodes=50,edges=1000,iterations=100)
 
+avg_results([an.simulated_annealing,bf.brute_force_search,an.simulated_annealing_sort,gen.genetic_search],nodes=9,edges=9,iterations=50)
 #test(bf.brute_force_search,nodes=9,edges=9)
 #test(gen.genetic_search,nodes=9,edges = 9)
 #test(an.simulated_annealing,nodes = 9,edges =9)
